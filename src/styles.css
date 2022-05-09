@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --darkPurple: #5856d6;
+  --lightBlue: #5ac8fa;
+  --white: #fff;
+  --darkGray: #53575a;
+}
+
+body,
+button {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0rem;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  color: var(--darkGray);
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Nav section */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkPurple);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  width: 100%;
+}
+
+.logo-text {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 15.12px;
+}
+
+.sidebar-btn {
+  margin-left: auto;
+}
+
+.sidebar {
+  width: 87%;
+  height: 100%;
+  background-color: var(--white);
+  position: fixed;
+  left: 0px;
+  top: 75px;
+  padding: 1.5rem;
+}
+
+li ::after {
+  content: url("../public/assets/Left-Arrow.svg");
+}
+
+.desktop-links {
+  display: none;
+}
+
+/* Header section */
+.hero-section {
+  background-image: url("../public/assets/Astronaut-Darkened.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  height: 480px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.learn-btn {
+  background-color: var(--lightBlue);
+}
+
+/* Todo Item Section */
+
+h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  color: var(--darkGray);
+}
+
+.todo-section {
+  padding: 1.5rem;
+}
+
+.todo-item-wrapper {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0px 1px 10px 0px #00000020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.complete {
+  background-color: #cccccc;
+}
+
+.incomplete {
+  background-color: var(--lightBlue);
+}
+
+/* Footer Section */
+
+footer {
+  height: 53px;
+  background-color: var(--darkGray);
+}
+
+/* Tablet / Desktop Styling */
+
+@media (min-width: 768px) {
+  nav {
+    padding: 0.75rem 6.25rem;
+  }
+
+  .desktop-links {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .desktop-links a {
+    border-bottom: none;
+    color: white;
+    padding: 0 1rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar-btn {
+    display: none;
+  }
+
+  .todo-section {
+    padding: 0 7.75rem;
+  }
+
+  .tasks {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .todo-item-wrapper {
+    height: 137px;
+  }
+}
