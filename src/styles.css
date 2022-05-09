@@ -9,6 +9,7 @@
 :root {
   --darkPurple: #5856d6;
   --lightBlue: #5ac8fa;
+  --hoverLightBlue: #90d6f7;
   --white: #fff;
   --darkGray: #53575a;
 }
@@ -29,12 +30,6 @@ button {
 
 a {
   text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 0rem;
-  width: 100%;
-  border-bottom: 1px solid #e2e2e2;
-  color: var(--darkGray);
   font-size: 1.5rem;
 }
 
@@ -44,15 +39,20 @@ ul {
 
 /* Nav section */
 
-nav {
+header {
+  background-color: var(--darkPurple);
+  color: var(--white);
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--darkPurple);
-  color: var(--white);
   padding: 0.75rem 1.5rem;
-  position: fixed;
-  width: 100%;
+}
+
+header div {
+  display: flex;
+  align-items: center;
 }
 
 .logo-text {
@@ -60,11 +60,15 @@ nav {
   margin-left: 15.12px;
 }
 
-.sidebar-btn {
+.menu-btn {
   margin-left: auto;
 }
 
-.sidebar {
+.nav-links {
+  display: none;
+}
+
+.active {
   width: 87%;
   height: 100%;
   background-color: var(--white);
@@ -72,14 +76,19 @@ nav {
   left: 0px;
   top: 75px;
   padding: 1.5rem;
+  display: block;
 }
 
-li ::after {
+.active a {
+  color: var(--darkGray);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.active li ::after {
   content: url("../public/assets/Left-Arrow.svg");
-}
-
-.desktop-links {
-  display: none;
 }
 
 /* Header section */
@@ -110,15 +119,36 @@ h2 {
 
 /* Todo Item Section */
 
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1.125rem;
+}
+
+.progress-bar {
+  width: 327px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #e2e2e2;
+}
+
+.progress-done {
+  background-color: var(--darkPurple);
+  border-radius: 15px;
+  height: 100%;
+  max-width: 100%;
+}
+
 h3 {
-  text-align: center;
   font-size: 3rem;
-  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
   color: var(--darkGray);
 }
 
 .todo-section {
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .todo-item-wrapper {
@@ -140,6 +170,11 @@ h3 {
   background-color: var(--lightBlue);
 }
 
+.learn-btn:hover,
+.incomplete:hover {
+  background-color: var(--hoverLightBlue);
+}
+
 /* Footer Section */
 
 footer {
@@ -150,35 +185,68 @@ footer {
 /* Tablet / Desktop Styling */
 
 @media (min-width: 768px) {
-  nav {
+  header {
     padding: 0.75rem 6.25rem;
+    position: relative;
   }
 
-  .desktop-links {
+  .nav-links {
     display: flex;
-    margin-left: auto;
   }
 
-  .desktop-links a {
-    border-bottom: none;
-    color: white;
-    padding: 0 1rem;
+  .nav-links a {
+    color: var(--white);
+    margin: 0 0.75rem;
+    text-decoration: initial;
+    position: relative;
   }
 
-  .sidebar {
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    width: 0%;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .menu-btn {
     display: none;
   }
 
-  .sidebar-btn {
-    display: none;
+  .hero-section {
+    padding: 11.25rem 7.75rem;
+    align-items: flex-start;
+  }
+
+  .hero-section h2 {
+    font-size: 3.5rem;
+  }
+
+  .progress-section {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  h3 {
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0;
   }
 
   .todo-section {
-    padding: 0 7.75rem;
+    padding: 1.5rem 1.5rem;
   }
 
   .tasks {
     display: grid;
+    justify-content: center;
     gap: 3rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -186,5 +254,12 @@ footer {
 
   .todo-item-wrapper {
     height: 137px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .todo-section {
+    padding: 1.5rem 7.75rem;
   }
 }
