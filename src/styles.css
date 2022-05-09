@@ -7,11 +7,12 @@
 }
 
 :root {
+  --white: #fff;
   --darkPurple: #5856d6;
   --lightBlue: #5ac8fa;
-  --hoverLightBlue: #90d6f7;
-  --white: #fff;
   --darkGray: #53575a;
+  --hoverLightBlue: #90d6f7;
+  --hoverDarkGray: #929292;
 }
 
 body,
@@ -21,11 +22,12 @@ button {
 }
 
 button {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 0rem;
   border: none;
   color: var(--white);
   cursor: pointer;
   font-size: 0.875rem;
+  width: 120px;
 }
 
 a {
@@ -37,75 +39,21 @@ ul {
   list-style: none;
 }
 
-/* Nav section */
+/* Hero Section */
 
-header {
-  background-color: var(--darkPurple);
-  color: var(--white);
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-}
-
-header div {
-  display: flex;
-  align-items: center;
-}
-
-.logo-text {
-  font-family: "Montserrat", sans-serif;
-  margin-left: 15.12px;
-}
-
-.menu-btn {
-  margin-left: auto;
-}
-
-.nav-links {
-  display: none;
-}
-
-.active {
-  width: 87%;
-  height: 100%;
-  background-color: var(--white);
-  position: fixed;
-  left: 0px;
-  top: 75px;
-  padding: 1.5rem;
-  display: block;
-}
-
-.active a {
-  color: var(--darkGray);
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 0rem;
-  border-bottom: 1px solid #e2e2e2;
-}
-
-.active li ::after {
-  content: url("../public/assets/Left-Arrow.svg");
-}
-
-/* Header section */
 .hero-section {
   background-image: url("../public/assets/Astronaut-Darkened.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-
-  height: 480px;
+  height: 550px;
   padding: 0.75rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--white);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 h2 {
@@ -115,64 +63,6 @@ h2 {
 
 .learn-btn {
   background-color: var(--lightBlue);
-}
-
-/* Todo Item Section */
-
-.progress-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1.125rem;
-}
-
-.progress-bar {
-  width: 327px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: #e2e2e2;
-}
-
-.progress-done {
-  background-color: var(--darkPurple);
-  border-radius: 15px;
-  height: 100%;
-  max-width: 100%;
-}
-
-h3 {
-  font-size: 3rem;
-  padding-bottom: 0.75rem;
-  color: var(--darkGray);
-}
-
-.todo-section {
-  padding: 0 1.5rem 1.5rem 1.5rem;
-}
-
-.todo-item-wrapper {
-  font-size: 1.5rem;
-  padding: 1.5rem;
-  background-color: white;
-  box-shadow: 0px 1px 10px 0px #00000020;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.complete {
-  background-color: #cccccc;
-}
-
-.incomplete {
-  background-color: var(--lightBlue);
-}
-
-.learn-btn:hover,
-.incomplete:hover {
-  background-color: var(--hoverLightBlue);
 }
 
 /* Footer Section */
@@ -185,81 +75,13 @@ footer {
 /* Tablet / Desktop Styling */
 
 @media (min-width: 768px) {
-  header {
-    padding: 0.75rem 6.25rem;
-    position: relative;
-  }
-
-  .nav-links {
-    display: flex;
-  }
-
-  .nav-links a {
-    color: var(--white);
-    margin: 0 0.75rem;
-    text-decoration: initial;
-    position: relative;
-  }
-
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    background-color: white;
-    height: 3px;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-    width: 0%;
-  }
-
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
   .hero-section {
     padding: 11.25rem 7.75rem;
     align-items: flex-start;
   }
 
-  .hero-section h2 {
+  h2 {
     font-size: 3.5rem;
-  }
-
-  .progress-section {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
-  h3 {
-    margin-right: 1.5rem;
-    font-size: 1.5rem;
-    padding-bottom: 0;
-  }
-
-  .todo-section {
-    padding: 1.5rem 1.5rem;
-  }
-
-  .tasks {
-    display: grid;
-    justify-content: center;
-    gap: 3rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .todo-item-wrapper {
-    height: 137px;
-    text-align: center;
-  }
-}
-
-@media (min-width: 1200px) {
-  .todo-section {
-    padding: 1.5rem 7.75rem;
+    letter-spacing: 1px;
   }
 }

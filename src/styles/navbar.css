@@ -1,0 +1,125 @@
+header {
+  background-color: var(--darkPurple);
+  color: var(--white);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 15.12px;
+}
+
+.menu-btn {
+  margin-left: auto;
+}
+
+.nav-links {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 50%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    left: -50px;
+  }
+  to {
+    opacity: 100%;
+    left: 0px;
+  }
+}
+
+.active {
+  background-color: var(--white);
+  width: 87%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 75px;
+  padding: 1.5rem;
+  display: block;
+  animation: slideIn 0.75s;
+}
+
+.active a {
+  color: var(--darkGray);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.active li ::after {
+  content: url("../../public/assets/Left-Arrow.svg");
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 13%;
+  background-color: black;
+  right: 0px;
+  opacity: 50%;
+  top: 75px;
+  animation: fadeIn 1.5s;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 0.75rem 6.25rem;
+    position: relative;
+  }
+
+  .active {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    margin: 0 0.75rem;
+    text-decoration: initial;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    width: 0%;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}

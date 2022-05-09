@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "../styles/todoItem.css";
 
-const TodoItem = ({ taskNum, setProgress, progress, todoItems }) => {
+const TodoItem = ({ taskNum, progress, setProgress, todoItems }) => {
   const [isDone, setIsDone] = useState(false);
 
   const toggleTask = () => {
@@ -17,7 +18,7 @@ const TodoItem = ({ taskNum, setProgress, progress, todoItems }) => {
     <div className="todo-item-wrapper">
       <p>Todo Task {taskNum}</p>
       <button
-        className={isDone ? "complete" : "incomplete"}
+        className={isDone ? "complete-btn" : "incomplete-btn"}
         onClick={() => toggleTask()}
       >
         {isDone ? "Done" : "Mark as Done"}

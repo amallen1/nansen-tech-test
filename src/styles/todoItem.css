@@ -1,0 +1,56 @@
+.todo-section {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.todo-item-wrapper {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0px 1px 10px 0px #00000020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.complete-btn {
+  background-color: #cccccc;
+}
+
+.complete-btn:hover {
+  background-color: var(--hoverDarkGray);
+}
+
+.incomplete-btn {
+  background-color: var(--lightBlue);
+}
+
+.learn-btn:hover,
+.incomplete-btn:hover {
+  background-color: var(--hoverLightBlue);
+}
+
+@media (min-width: 768px) {
+  .todo-section {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .tasks {
+    display: grid;
+    justify-content: center;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .todo-item-wrapper {
+    height: 137px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .todo-section {
+    padding: 1.5rem 7.75rem;
+  }
+}

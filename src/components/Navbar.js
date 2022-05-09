@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,17 +17,20 @@ const Navbar = () => {
       </div>
 
       <nav>
-        <ul className={isMobile && isOpen ? "nav-links active" : "nav-links"}>
-          <li>
-            <a href="/#">Schedule</a>
-          </li>
-          <li>
-            <a href="/#">About us</a>
-          </li>
-          <li>
-            <a href="/#">Contact</a>
-          </li>
-        </ul>
+        <div>
+          <ul className={isMobile && isOpen ? "nav-links active" : "nav-links"}>
+            <li>
+              <a href="/#">Schedule</a>
+            </li>
+            <li>
+              <a href="/#">About us</a>
+            </li>
+            <li>
+              <a href="/#">Contact</a>
+            </li>
+          </ul>
+          <div className={isMobile && isOpen ? "overlay" : "nav-links"} />
+        </div>
 
         {isMobile &&
           (isOpen ? (

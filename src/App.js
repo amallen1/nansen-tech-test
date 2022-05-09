@@ -24,10 +24,10 @@ const App = () => {
           <ProgressBar progress={progress} />
 
           <div className="tasks">
-            {todoItems.map((item, index) => (
+            {todoItems.map((task, index) => (
               <TodoItem
                 key={index}
-                taskNum={item}
+                taskNum={task}
                 progress={progress}
                 setProgress={setProgress}
                 todoItems={todoItems}
